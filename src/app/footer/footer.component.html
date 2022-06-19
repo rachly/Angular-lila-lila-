@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <title>footer</title>
+</head>
+
+<body>
+   
+    <footer>
+        <div class="footer">
+            <div class="Imges-Icon"> 
+                <div>
+                    <a (click)="onNavigatee()" ><img src="/assets/אינסטגרם-removebg-preview.png"  width="50px"   height="50px" ></a>  
+                </div>  
+                <div>    
+                   <a (click)="onNavigatew()" ><img src="/assets/וואצפ.PNG-removebg-preview.png" width="65px" height="55px"></a>
+                </div> 
+                
+                   <!-- <a routerLink="contact-us"><img src="/assets/וואצפ2-removebg-preview.png"   ></a> -->
+                   <div>
+                    <!-- <button (click)="onNavigate()"><img src="/assets/פייסבוק-removebg-preview.png"  width="60px" height="55px"></tn-submenu-link> -->
+                   <!-- <a href="https://www.facebook.com/%D7%9C%D7%99%D7%9C%D7%94-%D7%9C%D7%99%D7%9C%D7%94-100742032210707/"><img src="/assets/פייסבוק-removebg-preview.png"  width="60px" height="55px"></a> -->
+                   <a class="main-item" (click)="onNavigate()"><img src="/assets/פייסבוק-removebg-preview.png"  width="60px" height="55px"></a>
+                </div>
+                 </div> 
+
+            <div class="footer-form" style="margin-top: 75px;padding-left: 35px;">
+                    <form [formGroup]="Mail" (ngSubmit)="sendEmail()">
+
+                    <!-- <div class="all-input"> -->
+                        <p dir="rtl" style="margin-top: 12px;">יש לכם שאלה ? צרו קשר</p>
+
+                        <div class="detilas">
+                          
+                    <div class="subject">
+                        <input class="input-form" type="text"   formControlName="subjectSend" placeholder="נושא  *">
+                        <input class="input-form" type="text"  formControlName="massage" placeholder="הודעה *">
+                    </div> 
+                     <div class="subject">
+                            <input class="input-form" type="text" formControlName="NameSend" placeholder="שם מלא  *" [class.error.red]="Mail.controls['NameSend'].touched&&Mail.controls['NameSend'].errors">  
+                            <div *ngIf="Mail.controls['NameSend'].touched&&Mail.controls['NameSend'].errors">שם לא תקין </div>
+                 
+                        <input class="input-form" type="text"  formControlName="Phon" placeholder=" טלפון *" [class.error.red]="Mail.controls['Phon'].touched&&Mail.controls['Phon'].errors">
+                        <div *ngIf="Mail.controls['Phon'].touched&&Mail.controls['Phon'].errors">טלפון לא תקין    </div>
+
+                        <input class="input-form" type="text" formControlName="Email1" placeholder="מייל *" [class.error.red]="Mail.controls['Email1'].touched&&Mail.controls['Email1'].errors">
+                           <div *ngIf="Mail.controls['Email1'].touched&&Mail.controls['Email1'].errors">מייל לא תקין </div>
+                        </div>
+                        
+                        </div>
+                                    <button class="send"  type="submit">שלח</button>
+
+
+                </form>
+            </div>
+
+
+            <div class="footer-about" style="margin:5% ;padding-left: 35px;" dir="rtl">
+                <div >
+                    <!-- style="margin:50px" -->
+                    <h1  style="font-weight: 900px; font-size: 28px;padding-bottom: 22px; margin-top:12px;">
+                        לילה לילה
+                    </h1>
+                </div>
+                <p>מזרוני איכות אורטופדיים
+                </p>
+                <p> ליצירת קשר חייגו:072584965128</p>
+
+                <p>שעות פתיחת החנות הם בימים א-ה בשעות 09:00-19:00</p>
+                <p>ניתן לפנות אלינו גם כן בכתובת המייל eliRubin@gmail.com</p>
+            </div>
+        
+
+     
+        </div>
+
+       
+    </footer>
+
+</body>
+
+</html> 
+  <!-- <form [formGroup]="myUser" (ngSubmit)="enterUser()"> -->
+                   <!-- <input type="text" formControlName="massage" required> -->
+                  <!-- <button type="submit">send</button> -->
+             <!-- </form> -->

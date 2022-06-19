@@ -1,0 +1,142 @@
+<form [formGroup]="myProduct" (ngSubmit)="enter()">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main-container">
+        <div class="login-box">
+            <div class="header">
+                <h1>
+                    טופס הכנסת מוצר חדש
+                </h1>
+            </div>
+            <div class="login">
+                <div class="form-control1">
+                    <!-- <label> id</label>     -->
+                    <input placeholder="id" type="text" formControlName="Id" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>  שם מוצר</label> -->
+                    <input type="text" placeholder=" שם מוצר" formControlName="NameProdact" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <label> סוג מוצר</label>
+                    <select class="inputs" formControlName="TypeProductId" class="tbox">
+                        <option *ngFor="let i of  ArrType" [value]="i.Id" class="tbox">
+                            {{i.Name}}
+                        </option>
+                    </select>
+                </div>
+                <!-- <input   type="text" formControlName="TypeProductId" > -->
+                <div class="form-control1">
+                    <label> שם ספק</label>
+                    <select class="inputs" formControlName="SupplierId" class="tbox">
+                        <option *ngFor="let i of  ArrSupplier" [value]="i.Id" class="tbox">
+                            {{i.Name}}
+                        </option>
+                    </select>
+                </div>
+                <!-- <input   type="text" formControlName="SupplierId" > -->
+                <div class="form-control1">
+                    <!-- <label> אורך </label> -->
+                    <input type="text" formControlName="Length" placeholder="אורך" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>  רוחב</label> -->
+                    <input type="text" formControlName="Width" placeholder="רוחב" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>גובה</label>  -->
+                    <input type="text" formControlName="height" placeholder="גובה" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label> משקל</label> -->
+                    <input type="text" formControlName="Weight" placeholder="משקל" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>  תאור מוצר</label> -->
+                    <input type="text" formControlName="DescriptionProduct" placeholder="תאור מוצר" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>שנות אחריות</label>  -->
+                    <input type="text" formControlName="Yearsofwarranty" placeholder="שנות אחריות" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label> מחיר</label> -->
+                    <input type="text" formControlName="Price" placeholder="מחיר" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>  מחיר מבצע</label> -->
+                    <input type="text" formControlName="salePrice" placeholder="מחיר מבצע" class="tbox">
+                </div>
+                <div class="form-control1">
+                    <!-- <label>תוקף מבצע</label>  -->
+                    <input type="text" formControlName="OperatingDate" placeholder="תוקף מבצע" class="tbox">
+                </div>
+
+
+                <button type="submit" class="btn">שמירה</button>
+
+
+                <label>תמונת מוצר</label>
+                <!-- <input   type="text" formControlName="PhotoId" >   -->
+
+                <div class="countianer">
+                    <div class="row">
+                        <div class="col.s8 offset-2">
+                            <div class="card-panel teal lighten-2">
+                                <h4 class="center white-text">כותרת התמונה</h4>
+                                <form #imageForm=ngForm (ngSubmit)="OnSubmit(Caption)">
+                                    <div class="row">
+                                        <div class="input-d col s12">
+                                            <input type="text" #Caption ngModel name="Caption" id="Caption" required>
+                                            <!-- <label for="Caption">Caption</label> -->
+                                        </div>
+                                    </div>
+                                    <!-- <img src="data:image/png;base64,{{myimage.Id>0?myimage.Filevalue:SelctProduct.Photo}}"                                      width="250px" /> -->
+                                    <!-- <img src="data:image/png;base64,{{SelctProduct.Photo}}" width="50px"/> -->
+
+                                    <!-- <img [src]="myimage."  style="width: 250px; height: 200px;"> -->
+                                     <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.file)">  -->
+                                     <button type="submit"    [disabled]="fileToUpload.value==''|| !imageForm.valid">submit</button>
+                              
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+<!-- <img [src]="url" height="200px"/><br>
+         <input type="file" (change)="onSelectFile($event)"> -->

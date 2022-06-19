@@ -1,0 +1,121 @@
+
+.footer{
+   width: 100%;
+    height: auto;
+    margin: 0 auto;
+    /* border: green 2px solid; */
+    display: flex;
+    justify-content: center;
+    background-color: rgba(14, 13, 13, 0.151);
+
+  
+ }
+ .Imges-Icon{
+  /* padding: 55px; */
+   display: flex;
+   margin-top: 400px;
+   justify-content: center;
+ }
+.f{
+    display: flex;
+    margin-top: 400px;
+    justify-content: center;  
+}
+h1{
+    font-weight: 700;
+    font-size:32px;
+    color: #666666;
+    text-align: right;
+}
+ p{
+    font-weight: 500;
+    font-size: 20px;
+    color: #666666;
+    text-align: right;
+  
+ }
+.input-form:focus {
+       border:3px groove #5569da; border-radius: 10;
+
+    box-shadow: 10px  10px 15px rgba(131, 151, 230, 0.931); ;
+  }
+ 
+.input-form{
+    font-size: 1.111rem;
+    padding: 0.375rem 0.75rem;
+    color: #00448A;
+    border-radius: 0;
+    background-color: transparent;
+    height: auto;
+    line-height: 1;
+    font-size: 1.33rem;
+    font-weight:500;
+    border: 0;
+    border-bottom: 0.112rem solid #232323;
+    padding-right: 0;
+    text-align: right;
+    margin: 25px;
+    /* display: flex;
+    
+    flex-direction: column-reverse; 
+     border: none;
+    border-radius:10px;
+    height: 38px;
+    width: 270px;
+    border: 1px solid #dddddd;
+    background-color: #fff;  */
+   
+    
+}
+.send{
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.575); ;
+    border-radius:10px;
+    height: 50px;
+    width: 150px;
+    border: 1px solid #2c262685;
+    background-color: rgba(38, 91, 204, 0.918); 
+    margin: 25px;
+}
+.send:hover{
+    background-color: rgb(4, 55, 165);  
+}
+@media(max-width:768px){  
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .detilas{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .Imges-Icon{
+        margin-top: 100px;
+        display: flex;
+    
+        justify-content: center;
+       }
+       .f{
+        margin-top: 100px;
+        display: flex;
+        justify-content: end;
+        width: 100px;
+       }
+
+}
+.red{
+    color: #d10f0f;
+    font-size: 16px;
+    direction: rtl;
+} 
+input.ng-invalid.ng-touched{
+    border:3px groove #e2241e; border-radius: 10;
+
+    box-shadow: 10px  10px 15px rgba(230, 162, 131, 0.931); ;
+}
+
+.detilas{
+    display: flex;
+}
+.subject{
+    
+}

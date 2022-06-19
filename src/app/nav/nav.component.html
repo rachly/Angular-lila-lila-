@@ -1,0 +1,121 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<mat-sidenav-container class="sidenav-container">
+ 
+  <mat-sidenav
+   #drawer 
+   class="sidenav"
+   [ngClass]="{hidden: !(isHandset$ |async)!.matches}"
+    fixedInViewport="false"
+      [attr.role]="isHandset$ ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async)!.matches ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)!.matches">
+  <!-- <mat-toolbar>לילה לילה</mat-toolbar> -->
+
+    <mat-nav-list class="list">
+      <div class="box-list" style="background-color:  rgba(182, 193, 255, 0.383);;">
+        <mat-icon aria-label="Side nav toggle icon" class="icon">home</mat-icon>
+       <a mat-list-item  routerLink="home">דף הבית</a> 
+      </div> 
+       <div class="box-list" style="background-color:  rgba(96, 111, 194, 0.575);;">
+       <a mat-list-item  routerLink="about" >אודות</a>   
+     </div> 
+      <div class="box-list" style="background-color:  rgba(139, 152, 223, 0.452);;">
+       <a mat-list-item   routerLink="/mitronim"  >מזרונים </a>
+    </div> 
+
+    <div class="box-list" style="background-color:  rgba(58, 66, 122, 0.52);;">
+     <a mat-list-item  routerLink="/raitim" style="margin-left: 150px;" >רהיטים  </a>  
+</div>
+<div class="box-list" style="background-color:  rgba(58, 66, 122, 0.52);;">
+   <a mat-list-item routerLink="/kids-bad-room">חדרי ילדים</a>
+</div>
+<div class="box-list" style="background-color:  rgba(58, 66, 122, 0.52);;">
+  <a mat-list-item routerLink="/parntes-bad-room">חדרי שינה</a></div>
+<div class="box-list" style="background-color:  rgba(58, 66, 122, 0.52);;">
+  <a mat-list-item routerLink="/closets">  שונים רהיטים</a>
+</div>
+
+   <div class="box-list" style="background-color:  rgba(58, 66, 122, 0.52);;">
+   
+      <a mat-list-item  routerLink="/mazaim" >כלי מיטה </a>
+   </div>
+    <div class="box-list" style="background-color:  rgb(43, 51, 95);;">
+      <a mat-list-item  routerLink="contact-us">צור קשר</a>  
+    </div>
+    <button type="button"  class="adminstr" (click)="btnClick();">לאזור האישי</button>    
+    </mat-nav-list> 
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!-- <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onTogglesSideNav()">
+         <mat-icon>menu</mat-icon>
+      </button>
+      </div> -->
+    <button
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()"
+                *ngIf="(isHandset$ | async)!.matches">
+                <mat-icon aria-label="Side nav toggle icon" class="icon">menu</mat-icon>
+              </button> 
+        <div class="links"> </div>
+
+
+         <a routerLink="/contact-us"routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact:
+          true}">צור קשר</a>
+         <a routerLink="/mazaim"routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact:
+          true}" >כלי מיטה</a> 
+        
+
+             <nav id="primary_nav_wrap">
+                     <ul>
+                     
+             <li> <a routerLink="/raitim"routerLinkActive="active" 
+              [routerLinkActiveOptions]="{exact:
+               true}" >רהיטים <i class="fa fa-caret-down"></i></a> 
+              <ul>
+                <li> <a routerLink="/kids-bad-room">חדרי ילדים</a> </li>
+                <li><a routerLink="/parntes-bad-room">חדרי שינה</a> </li>
+                <li><a routerLink="/closets">רהיטים</a> </li>
+              </ul>
+            </li>
+  </ul>
+  </nav>
+         <a routerLink="/mitronim" routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact:
+          true}"  >מזרונים</a>
+         <a routerLink="/about"routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact:
+          true}" >אודות</a>
+         <a  routerLink="/home"routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact:
+          true}">דף הבית</a>
+
+
+
+
+         
+ <div class="spacer"></div>
+ <div dir="ltr" class="divImg">
+ <img src="/assets/לוגו.png" class="logo" >
+</div>
+ 
+       
+          
+
+    </mat-toolbar>
+  
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+ 
+   <!-- <div id="Lorem_Ipsum"><app-footer></app-footer></div> -->
+
+ 

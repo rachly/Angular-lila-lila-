@@ -1,0 +1,48 @@
+
+<form [formGroup]="myADmin" (ngSubmit)="UserAdmin()">
+
+<label for="reg-log"></label>
+<div class="card-3d-wrap mx-auto">
+    <div class="card-3d-wrapper">
+        <div class="card-front">
+            <div class="center-wrap">
+                <div class="section text-center">
+                    <h4 class="mb-4 pb-3">  דף ניהול</h4>
+                    <div class="form-group">
+          
+                        <input type="text" name="logemail" class="form-style"formControlName="Mail" placeholder="קוד" id="logemail" autocomplete="off">
+                        <i class="input-icon uil uil-at"></i>
+                    </div>	
+                    <div class="form-group mt-2">
+                      
+                        <input type="text" name="logpass" class="form-style" formControlName="Password" placeholder="סיסמא" id="logpass" autocomplete="off">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+                    <button class="btn mt-4" type="submit" >הכנס</button>
+               
+                  </div>
+              </div>
+          </div>
+        
+      </div>
+  </div>
+</form>
+  <button (click)="exit();" class="btn mt-4">יציאה</button><!-- <div class="main-container">
+        <div class="login-box">
+          <div class="header">
+           <h1 >
+            
+           </h1>
+            </div> 
+            <div class="login">
+                <div class="form-control1">
+            
+           </div>
+                <div class="form-control1">   
+           
+                 </div>   
+ 
+    <iframe src="https://www.google.co.il/maps/place/%D7%91%D7%99%D7%AA+%D7%94%D7%9E%D7%95%D7%A8%D7%94+%D7%A9%D7%A6'%D7%A8%D7%A0%D7%A1%D7%A7%D7%99+%D7%A9%D7%A2%D7%9C+%D7%99%D7%93%D7%99+%D7%A1%D7%9E%D7%99%D7%A0%D7%A8+%D7%91%D7%99%D7%AA+%D7%99%D7%A2%D7%A7%D7%91+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91%E2%80%AD/@32.086812,34.8312295,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b0f0baeafa3:0x82918cf90983833c!8m2!3d32.086812!4d34.8290408?hl=iw&authuser=0"></iframe>
+</div>
+</div>
+    </div> -->

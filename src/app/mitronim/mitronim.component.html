@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<div class="countinar">
+  <div class="gallery">     
+  <div *ngFor="let obj of ArrP; index as i"
+   > 
+   <!-- [style.gridRow]="obj.row" 
+   [style.gridCol]="obj.col" -->
+   <!-- <div class="title">  </div> -->
+  <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
+   <button *ngIf="userAdmin" (click)="deleteProdact(obj.Id)">מחיקה</button>
+   <div class="img">
+   <img class="img-img" data-aos="zoom-out-down" data-aos-delay="10"    data-aos-once="true" data-aos-duration="1000" src="data:image/png;base64,{{obj.Photo}}" alt="{{obj.Photo}}" (click)="selectImage=i"   />
+   <div class="img-overlay">
+     <div class="img-title">
+       {{obj.NameProdact}}
+      </div>
+      <p class="img-des" *ngIf="obj.DescriptionProduct!=null">{{obj.DescriptionProduct}}</p>
+   </div>
+  </div>   
+  </div>
+  </div>
+</div>  
+<div>
+  <button *ngIf="userAdmin&&!old" (click)="getAll()"> הצג הכל </button>
+  <button *ngIf="userAdmin&&old" (click)="getAll()"> הצג חדש </button>
+  </div>
+
+    
+<div>
+  <button *ngIf="userAdmin" (click)="addNew()"> חדש </button>
+  </div>
+  
+<app-enter-products *ngIf="selectEditP.Id!=-5" [SelctProduct]="selectEditP"></app-enter-products>
+<!-- <app-gallrey-carousal *ngIf="selectImage!== null" (closeCarsoul)="selectImage=null" [ArrP]="ArrP" [selectImage]="selectImage"></app-gallrey-carousal> -->
+
