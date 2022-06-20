@@ -114,11 +114,12 @@
                                             <!-- <label for="Caption">Caption</label> -->
                                         </div>
                                     </div>
-                                    <!-- <img src="data:image/png;base64,{{myimage.Id>0?myimage.Filevalue:SelctProduct.Photo}}"                                      width="250px" /> -->
-                                    <!-- <img src="data:image/png;base64,{{SelctProduct.Photo}}" width="50px"/> -->
+                                    <!-- <img src="data:image/png;base64,{{myimage.Id>0?myimage.Filevalue:SelctProduct.Photo}}"  width="250px" /> --> -->
+                                    <img src="data:image/png;base64,{{SelctProduct.Photo}}" width="50px"/>
 
-                                    <!-- <img [src]="myimage."  style="width: 250px; height: 200px;"> -->
-                                     <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.file)">  -->
+                                       <!-- <img [src]="myimage."  style="width: 250px; height: 200px;">  -->
+                                    <!-- <input type="file" name="file" id="myFile"   (change)='uploadSingleFile($any($event.target).files)' > -->
+                                     <input type="file" #Image accept="image/*" (change)="handleFileInput($any($event.target).files)">  
                                      <button type="submit"    [disabled]="fileToUpload.value==''|| !imageForm.valid">submit</button>
                               
                                 </form>
