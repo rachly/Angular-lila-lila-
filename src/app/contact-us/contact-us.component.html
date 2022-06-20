@@ -23,50 +23,11 @@
     </div>
     
 
- <!-- <agm-map [latitude]="latitude"[longtitude]="longtitude" (mapClick)="onChoseLocation($event)">
+ <agm-map [latitude]="latitude"[longtitude]="longtitude"
+    (mapClick)="onChoseLocation($event)">
 
  
-<agm-marker [latitude]="latitude" [longtitude]="longtitude"></agm-marker>
-                    </agm-map>  -->
-                    <!-- <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>כתובת הכנס<mat-label/>
-                        <input matInput [value]="address" (keydown.enter)="$event.pre
-                        ventDefault()" matGoogleMapsAutocomplete
-                        (onAutocompleteSelected)="onAutocompleteSelected($event)" (
-                        onLocationSelected)="onLocationSelected($event)">
-                        </mat-form-field>
-                        <agm-map
-                        [latitude]="lat"
-                        [longitude]="lng"
-                        [zoom]="zoom"
-                        (mapClick)="mapClicked($event)">
-                        <agm-marker
-                        [markerClickable]="true"
-                        [latitude]="lat"
-                        [longitude]="lng">
-                        </agm-marker>
-                        <agm-circle
-                        *ngFor="let c of circle"
-                        [latitude]="c.latitude" [longitude]="c.longitude"[radius]="200"
-                        [fillColor]="'red'"
-                        [circleDraggable]="true"
-                        [editable]="true"
-                        (radiusChange)="radiusChange($event)"
-                        (dragEnd)="circleDragEnd(c, $event)">
-                        </agm-circle>
-                        </agm-map>
 
-
-
-</div> -->
-
-           <!--  <div class="map">
-                 #mapElement
-                    </div>
-
-<router-outlet></router-outlet>
-               -->
-           
        
     
             
