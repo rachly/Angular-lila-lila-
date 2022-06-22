@@ -4,27 +4,39 @@ import {  Output,  } from '@angular/core';
 //import { MouseEvent, LatLngLiteral, Circle } from '@agm/core';
 //import { Location, Appearance, GermanAddress } from '@angular-material-extensions/google-maps-autocomplete';
 // import PlaceResult = google.maps.places.PlaceResult;
-
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { NgZone } from '@angular/core';
+
 // import { MapsAPILoader } from '@agm/core';
 //import { LatLng } from '@agm/core/services/google-maps-types';
 //import { User } from '../zClasses/use
 import { Image } from '../Models/image.module ';
+
+import { GoogleMap, MapDirectionsService, MapInfoWindow, MapMarker } from '@angular/google-maps';
 declare const google :any;
+declare const L: any;
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-map:any;
-lat=32.80290908348538;
-lng=35.00423166919751;
+//center: google.maps.LatLngLiteral = {lat: 32.82495217780173 , lng: 35.07850747113787};
 
 
-  constructor() { }
 
-  ngOnInit(): void { 
-      
-     
-  }   }
+ngOnInit() {
+ 
+    }
+ 
+
+
+constructor() {}
+
+
+
+}
+  
+

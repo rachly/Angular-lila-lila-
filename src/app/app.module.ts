@@ -36,10 +36,13 @@ import { ClosetsComponent } from './closets/closets.component';
 //import { AgmCoreModule } from '@agm/core';
 // import { ClosetsComponent } from './closets/closets.component';
 //import {AlertModule} from 'ng2-bootstrap/ng2-bootstrap';
-
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CommonModule } from '@angular/common';
+import {  HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [  
+  declarations: [ 
+
     AppComponent,
     HomeComponent,
     EnterProductsComponent,
@@ -63,6 +66,10 @@ import { ClosetsComponent } from './closets/closets.component';
 
   ],
   imports: [
+    CommonModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
   // NgbAlertModule,
    // NgbPaginationModule,
    // AlertModule,

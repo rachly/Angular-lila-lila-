@@ -1,5 +1,5 @@
 export class TypeProduct{
-    constructor(public Id:number,public Name?:string){
+    constructor(public Id:number,public NameT?:string){
 
     }
 }

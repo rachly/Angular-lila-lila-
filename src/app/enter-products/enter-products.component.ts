@@ -34,11 +34,11 @@ export class EnterProductsComponent implements OnInit, OnChanges {
     this.changeView();
     this.mySuppiler = new FormGroup({
       "Id": new FormControl("", Validators.required),
-      "Name": new FormControl("", Validators.required)
+      "NameS": new FormControl("", Validators.required)
     });
     this.myTypse = new FormGroup({
       "Id": new FormControl("", Validators.required),
-      "Name": new FormControl("", Validators.required)
+      "NameT": new FormControl("", Validators.required)
     })
   }
 

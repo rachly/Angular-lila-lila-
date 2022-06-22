@@ -44,7 +44,7 @@
                     <label> סוג מוצר</label>
                     <select class="inputs" formControlName="TypeProductId" class="tbox">
                         <option *ngFor="let i of  ArrType" [value]="i.Id" class="tbox">
-                            {{i.Name}}
+                            {{i.NameT}}
                         </option>
                     </select>
                 </div>
@@ -53,7 +53,7 @@
                     <label> שם ספק</label>
                     <select class="inputs" formControlName="SupplierId" class="tbox">
                         <option *ngFor="let i of  ArrSupplier" [value]="i.Id" class="tbox">
-                            {{i.Name}}
+                            {{i.NameS}}
                         </option>
                     </select>
                 </div>
@@ -120,8 +120,9 @@
                                        <!-- <img [src]="myimage."  style="width: 250px; height: 200px;">  -->
                                     <!-- <input type="file" name="file" id="myFile"   (change)='uploadSingleFile($any($event.target).files)' > -->
                                      <input type="file" #Image accept="image/*" (change)="handleFileInput($any($event.target).files)">  
-                                     <button type="submit"    [disabled]="fileToUpload.value==''|| !imageForm.valid">submit</button>
-                              
+                                     <button type="submit"   >submit</button>
+                               <!-- [disabled]="fileToUpload.value==''|| !imageForm.valid" -->
+                               <!-- [disabled]="fileToUpload.value==''|| !imageForm.valid" -->
                                 </form>
                             </div>
                         </div>
