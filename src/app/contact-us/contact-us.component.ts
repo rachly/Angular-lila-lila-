@@ -20,13 +20,19 @@ declare const L: any;
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
-
+  
+ 
 
 ngOnInit() {
  
     }
- 
+    center: google.maps.LatLngLiteral = {lat:32.82494392033777, lng: 35.07851062088147};
+    zoom = 19.9;
+    markerOptions: google.maps.MarkerOptions = {draggable: false};
+    markerPositions: google.maps.LatLngLiteral[] = [{lat:32.82494392033777, lng: 35.07851062088147}];
+  
+    addMarker(event: google.maps.MapMouseEvent|any) {
+    }
 
 
 constructor() {}

@@ -1,23 +1,35 @@
-<div>
-    <div>
-        <h1>יצירת קשר </h1>
-        <div class="icons">
-            <div>
-                <p>מיקום שלנו</p>
-                <img src="/assets/מיקום.jpg">
-                <p>דבורה 9  קרית מוצקין</p>
-            </div> 
-            <div>
-                <p>המייל שלנו</p>
-                <img src="/assets/מייל.jpg">
-                <p>eli-rubin@gmail.com</p>
-            </div>
+ <h1> יצירת קשר   </h1>
+<div class="allPage">   
+  
+    <div class="counectUs">
+      
+      <!-- class="icons" -->
+        <div >
+              
+            <p> יעוץ הטלפוני זמין טלפונית בימים: א’-ה’ בשעות: 16:30 – 08:30  </p>
+               <img src="/assets/טלפון.jpg">
+               <a href="tal:052-769-7000"> 052-769-7000</a>
           
-             <div>
-                <p>הטלפון שלנו</p>
-                <img src="/assets/טלפון.jpg">
-                <p>0527697000</p>
-            </div>
+                <p> ?רוצים לבוא להתרשם בעצמכם </p>
+                <img src="/assets/מיקום.jpg">
+                דבורה 9 קרית מוצקין           
+     
+         
+                   <p>כמו כן יהיה ניתן לפנות אלינו באמצעות כתובת מייל:</p>
+                <img src="/assets/מייל.jpg">
+           <a  href="mailto:eli-rubin@gmail.com">eli-rubin@gmail.com</a> 
+           
+           
+             
+           
         </div>
 
     </div>
+    <div class="googleMaps">
+
+    <google-map height="600px" class="map" width="700px" [center]="center" [zoom]="zoom" (mapClick)="addMarker($event)">
+        <map-marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition"
+            [options]="markerOptions"></map-marker>
+    </google-map>
+    </div>
+</div>
