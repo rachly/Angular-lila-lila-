@@ -1,4 +1,4 @@
-// import { Byte } from "@angular/compiler/src/util";
+ //import { Byte } from "@angular/compiler/src/util";
 
 export class Products{
     constructor(public  Id:number,
@@ -17,7 +17,7 @@ export class Products{
         public Active?:boolean,
         public ImageId?:number,
         public Photo?:any
-        // Byte[]
+        // 
         )
         {
 

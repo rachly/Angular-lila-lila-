@@ -55,6 +55,7 @@ export class MitronimComponent implements OnInit {
     this.ArrP=[];
     this.getAll();
   }
+ //ImgUrl = `data:image/png;base64,${{this.inspectionDetails.reportImage}}`;
   getAll(){
     if(this.old){
     this.product.AllProdact(this.type).subscribe(s=>{
