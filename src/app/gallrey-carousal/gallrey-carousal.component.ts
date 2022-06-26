@@ -47,10 +47,10 @@ export class GallreyCarousalComponent implements OnInit {
   public onEvent(event: Event): void {
     event.stopPropagation();
   }
-  public close(): void {
+   public close(): void {
     alert("closde")
     this.closeCoursol.emit();
-  }
+   }
   public provies(): void {
     this.animStata = 'left';
     this.selectImage = this.selectImage > 0 ? this.selectImage - 1 : this.images.length - 1;

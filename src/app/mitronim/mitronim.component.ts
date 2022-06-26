@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class MitronimComponent implements OnInit {
   ArrP:Products[]=[];
-  selectImage?:number|null;
+  selectImage?:number|any;
   userAdmin:boolean=false;
   selectEditP:Products =new Products(-5);
   old:boolean=false;
