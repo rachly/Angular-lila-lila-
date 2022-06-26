@@ -33,3 +33,14 @@ body {
   src: url("assets/myFonts/GVERETLEVINALEFALEFALEF-REGULAR.TTF");
  
 }
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,900&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}

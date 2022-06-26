@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,13 +38,13 @@ import { ClosetsComponent } from './closets/closets.component';
 // import { ClosetsComponent } from './closets/closets.component';
 //import {AlertModule} from 'ng2-bootstrap/ng2-bootstrap';
 // import { GoogleMapsModule } from '@angular/google-maps';
-import { CommonModule } from '@angular/common';
+
 import {  HttpClientJsonpModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [ 
-
+  
     AppComponent,
     HomeComponent,
     EnterProductsComponent,

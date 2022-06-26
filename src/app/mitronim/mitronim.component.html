@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
@@ -6,11 +6,11 @@
 <div class="countinar">
   <div class="gallery">     
   <div *ngFor="let obj of ArrP; index as i"
-   > 
+   >  -->
    <!-- [style.gridRow]="obj.row" 
    [style.gridCol]="obj.col" -->
    <!-- <div class="title">  </div> -->
-  <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
+  <!-- <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
    <button *ngIf="userAdmin" (click)="deleteProdact(obj.Id)">מחיקה</button>
    <div class="img">
    <img class="img-img" data-aos="zoom-out-down" data-aos-delay="10"    data-aos-once="true" data-aos-duration="1000" src="data:image/png;base64,{{obj.Photo}}" alt="{{obj.Photo}}" (click)="selectImage=i"   />
@@ -34,6 +34,35 @@
   <button *ngIf="userAdmin" (click)="addNew()"> חדש </button>
   </div>
   
-<app-enter-products *ngIf="selectEditP.Id!=-5" [SelctProduct]="selectEditP"></app-enter-products>
+<app-enter-products *ngIf="selectEditP.Id!=-5" [SelctProduct]="selectEditP"></app-enter-products> -->
 <!-- <app-gallrey-carousal *ngIf="selectImage!== null"  [selectImage]="selectImage" (closeCarsoul)="selectImage=null" [ArrP]="ArrP"></app-gallrey-carousal> -->
 
+<div class="gallery-lightbox-conatiner">
+  <div class="gallery" *ngFor="let obj of ArrP ; index as i">
+    <div class="gallery-img">
+   <img  src="data:image/png;base64,{{obj.Photo}}" (click)="onPreviewImage(i)"  alt="{{obj.Photo}}">
+    </div>
+  </div>
+  
+<div *ngIf="ShowMask"  class="lightbox" >
+  <span *ngIf="showCount" class="count">
+    {{currentIndex + 1}}/{{totalimageCount}}
+  </span>
+  <button *ngIf="previewImage" (click)="onClosePreview()" class="close-btn">
+    <i class="far fa-times"></i>
+  </button>
+  <button *ngIf="controls" class="btn-lightbox-carousel btn-prev" (click)="prev()">
+   <i class="fas fa-arrow-circle-left icon-lightbox-carousel icon-prev"></i>
+  </button>
+  <button *ngIf="controls" class="btn-lightbox-carousel btn-next" (click)="next()">
+    <i class="fas fa-arrow-circle-right icon-lightbox-carousel icon-next"></i>
+
+  </button>
+ <div  *ngIf="previewImage" 
+ [@animation]="{value:'visible'}"
+ (@animation.done)="onAnimationEnd($event)"
+  class="lightbox-img">
+  <img src="data:image/png;base64,{{currentlightBoxImage.Photo}}" alt="">
+  </div>
+</div>
+</div>

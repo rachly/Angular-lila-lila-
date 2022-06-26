@@ -7,3 +7,7 @@ mat-sidenav{
 /* main{
     padding: 10px;
 } */
+:host{
+    width: 100vw;
+    height: 100vh;
+}

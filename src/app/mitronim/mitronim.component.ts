@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Image } from '../Models/image.module ';
 import { Products } from '../Models/Products ';
 import { ProductService } from '../product.service';
@@ -7,12 +7,32 @@ import { min } from 'rxjs/operators';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { animate,AnimationEvent, animation, style, transition, trigger } from '@angular/animations';
 @Component({
   selector: 'app-mitronim',
   templateUrl: './mitronim.component.html',
-  styleUrls: ['./mitronim.component.css']
+  styleUrls: ['./mitronim.component.scss'],
+  animations:[
+    trigger('animation',[ 
+    transition('void => visible',[
+      style({transform:'scale(0.5)'}),
+      animate('150ms',style({transform:'scale(1)'}))
+    ]),
+    transition('visible => void',[
+      style({transform:'scale(1)'}),
+      animate('150ms',style({transform:'scale(0.5)'}))
+    ]),
+   ] ),
+   trigger('animation2?',[
+    transition(':leave',[
+      style({opacity:1}),
+      animate('50ms',style({opacity:0.8}))
+    ])
+   ])
+  ]
 })
 export class MitronimComponent implements OnInit {
+  @Input() showCount=false;
   ArrP:Products[]=[];
   selectImage?:number|any;
   userAdmin:boolean=false;
@@ -21,7 +41,14 @@ export class MitronimComponent implements OnInit {
   startPage:string=" ";
   type:number=-1;
   flag:boolean=false;
+  previewImage= false;
+  ShowMask =false;
+  currentlightBoxImage:Products=this.ArrP[0];
+  currentIndex=0;
+  controls=true;
+  totalimageCount=0;
   ngOnInit(): void {
+    this.totalimageCount=this.ArrP.length;
  this.startPage=this.route.url;
  console.log(this.startPage)
  switch(this.startPage){
@@ -96,6 +123,37 @@ export class MitronimComponent implements OnInit {
      this.selectEditP=new Products(-1);
    }
 
+   onPreviewImage(index:number):void{
+    this.ShowMask=true;
+    this.previewImage=true;
+
+      this.currentIndex=index;
+      this.currentlightBoxImage=this.ArrP[index]
+   }
+   onAnimationEnd(event:AnimationEvent){
+    if(event.toState==='void'){
+      this.ShowMask=false;
+    }
+   }
+   onClosePreview(){
+    this.previewImage=false;
+   }
+
+next():void{
+this.currentIndex+1;
+if(this.currentIndex>this.ArrP.length-1){
+this.currentIndex=0;
+}
+this.currentlightBoxImage=this.ArrP[this.currentIndex];
+}
+prev():void{
+  this.currentIndex-1;
+  if(this.currentIndex<0){
+    this.currentIndex=this.ArrP.length-1;
+  }
+  this.currentlightBoxImage=this.ArrP[this.currentIndex];
+
+  }
 
   constructor(private product:ProductService,private user:UserService,private route:Router ) { }
 
