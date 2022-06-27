@@ -123,12 +123,13 @@ export class MitronimComponent implements OnInit {
      this.selectEditP=new Products(-1);
    }
 
-   onPreviewImage(index:number):void{
-    this.ShowMask=true;
-    this.previewImage=true;
-
+    onPreviewImage(index:number):void{
+      console.log(index);
+      this.ShowMask=true;
+      this.previewImage=true;
       this.currentIndex=index;
-      this.currentlightBoxImage=this.ArrP[index]
+      this.currentlightBoxImage=this.ArrP[index];
+      console.log( this.currentlightBoxImage=this.ArrP[index])
    }
    onAnimationEnd(event:AnimationEvent){
     if(event.toState==='void'){
@@ -140,19 +141,22 @@ export class MitronimComponent implements OnInit {
    }
 
 next():void{
-this.currentIndex+1;
+this.currentIndex =this.currentIndex+ 1;
+console.log(this.currentIndex);
 if(this.currentIndex>this.ArrP.length-1){
 this.currentIndex=0;
 }
 this.currentlightBoxImage=this.ArrP[this.currentIndex];
+console.log(this.currentlightBoxImage=this.ArrP[this.currentIndex])
 }
 prev():void{
-  this.currentIndex-1;
+  this.currentIndex=this.currentIndex-1;
+  console.log(this.currentIndex);
   if(this.currentIndex<0){
     this.currentIndex=this.ArrP.length-1;
   }
   this.currentlightBoxImage=this.ArrP[this.currentIndex];
-
+  console.log(this.currentlightBoxImage=this.ArrP[this.currentIndex])
   }
 
   constructor(private product:ProductService,private user:UserService,private route:Router ) { }

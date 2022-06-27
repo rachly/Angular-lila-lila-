@@ -39,6 +39,8 @@
 
 <div class="gallery-lightbox-conatiner">
   <div class="gallery" *ngFor="let obj of ArrP ; index as i">
+    <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
+   <button *ngIf="userAdmin" (click)="deleteProdact(obj.Id)">מחיקה</button>
     <div class="gallery-img">
    <img  src="data:image/png;base64,{{obj.Photo}}" (click)="onPreviewImage(i)"  alt="{{obj.Photo}}">
     </div>
@@ -66,3 +68,14 @@
   </div>
 </div>
 </div>
+<div>
+  <button *ngIf="userAdmin&&!old" (click)="getAll()"> הצג הכל </button>
+  <button *ngIf="userAdmin&&old" (click)="getAll()"> הצג חדש </button>
+  </div>
+
+    
+<div>
+  <button *ngIf="userAdmin" (click)="addNew()"> חדש </button>
+  </div>
+  
+<app-enter-products *ngIf="selectEditP.Id!=-5" [SelctProduct]="selectEditP"></app-enter-products> 
