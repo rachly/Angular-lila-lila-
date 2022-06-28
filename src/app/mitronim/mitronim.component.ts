@@ -47,6 +47,8 @@ export class MitronimComponent implements OnInit {
   currentIndex=0;
   controls=true;
   totalimageCount=0;
+  page=0;
+  limit=3;
   ngOnInit(): void {
     this.totalimageCount=this.ArrP.length;
  this.startPage=this.route.url;
@@ -80,23 +82,40 @@ export class MitronimComponent implements OnInit {
     this.user.isUserAdminObserv.subscribe(x=>this.userAdmin=x)   
    
     this.ArrP=[];
-    this.getAll();
+    //this.getAll();
+     this.getAlls();
   }
  //ImgUrl = `data:image/png;base64,${{this.inspectionDetails.reportImage}}`;
-  getAll(){
+  // getAll(){
+  //   if(this.old){
+  //   this.product.AllProdact(this.type).subscribe(s=>{
+  //     this.ArrP=s, 
+  //   console.log(this.ArrP)}
+  //   ,e=>{console.log(e)})
+  //   }
+  //   else{
+  //   this.product.AllOldProdacts(this.type).subscribe(s=>{this.ArrP=s, 
+  //     console.log(this.ArrP)}
+  //     ,e=>{console.log(e)})
+  //   }
+  //   this.old=!this.old;
+  //  }
+   getAlls(){
     if(this.old){
-    this.product.AllProdact(this.type).subscribe(s=>{
+    this.product.AllProdacts(this.type,this.page,this.limit).subscribe(s=>{
       this.ArrP=s, 
     console.log(this.ArrP)}
     ,e=>{console.log(e)})
     }
     else{
-    this.product.AllOldProdacts(this.type).subscribe(s=>{this.ArrP=s, 
+    this.product.AllOldProdacts(this.type,this.page,this.limit).subscribe(s=>{this.ArrP=s, 
       console.log(this.ArrP)}
       ,e=>{console.log(e)})
     }
     this.old=!this.old;
    }
+
+
    selectEdit(select:Products){
      this.selectEditP=select;
      console.log(this.selectEditP)
