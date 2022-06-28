@@ -25,7 +25,6 @@ import { MatListModule } from '@angular/material/list';
 //import { StickyNavModule } from 'ng2-sticky-nav';
 import { LightboxModule } from 'ngx-lightbox';
 import {MatMenuModule} from '@angular/material/menu';
-import { GallreyCarousalComponent } from './gallrey-carousal/gallrey-carousal.component';
 import { RaitimComponent } from './raitim/raitim.component';
 import { MazaimComponent } from './mazaim/mazaim.component';
 import { MitronimComponent } from './mitronim/mitronim.component';
@@ -54,7 +53,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AboutComponent,
     CategoriesComponent,
     NavComponent,
-    GallreyCarousalComponent,
     RaitimComponent,
     MazaimComponent,
     MitronimComponent,
