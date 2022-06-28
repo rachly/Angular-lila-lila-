@@ -27,7 +27,7 @@ export class ProductService {
 
      }
     AllOldProdacts(type:number,page:number,limit:number){
-      return this.Http.get<Products[]>(`https://localhost:44381/api/Products/GetAllPWhithNotActive?type=${type}?page=${page}?limit=${limit}`);
+      return this.Http.get<Products[]>(`https://localhost:44381/api/Products/GetAllPWhithNotActive?type=${type}&page=${page}&limit=${limit}`);
     }
     AllPicture(){
       // <Byte[][]>
