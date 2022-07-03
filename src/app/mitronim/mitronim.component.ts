@@ -8,6 +8,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { animate,AnimationEvent, animation, style, transition, trigger } from '@angular/animations';
+import { ArrayType } from '@angular/compiler';
 @Component({
   selector: 'app-mitronim',
   templateUrl: './mitronim.component.html',
@@ -47,13 +48,18 @@ export class MitronimComponent implements OnInit {
   currentIndex=0;
   controls=true;
   totalimageCount=0;
-  page=0;
-  limit=3;
-  ngOnInit(): void {
+  page:number=0;
+  limit:number=6;
+  count:number=0;
+  pageSize = 3;
+  ngOnInit(): void { 
+
     this.totalimageCount=this.ArrP.length;
- this.startPage=this.route.url;
- console.log(this.startPage)
- switch(this.startPage){
+  ///  console.log( this.totalimageCount+"count");
+  
+    this.startPage=this.route.url;
+    console.log(this.startPage)
+    switch(this.startPage){
   
    case "/mazaim" :
      this.type=1
@@ -84,6 +90,14 @@ export class MitronimComponent implements OnInit {
     this.ArrP=[];
     //this.getAll();
      this.getAlls();
+     this.getCount()
+     
+      }
+  getCount(){
+    this.product.count().subscribe(s=>{
+          this.count=s, 
+         console.log(this.count+"countSum")})       
+    
   }
  //ImgUrl = `data:image/png;base64,${{this.inspectionDetails.reportImage}}`;
   // getAll(){
@@ -100,19 +114,37 @@ export class MitronimComponent implements OnInit {
   //   }
   //   this.old=!this.old;
   //  }
+
+  pageChangeEvent(event:any){
+    this.page=event-1;
+    this.getAlls();
+   // console.log(this.ArrP.length+"count");
+  }
+  onChangeSize(event:any){
+    this.limit=event.target.value;
+    this.page=0;
+    this.getAlls();
+//console.log(this.ArrP.length+"count");
+  }
+
    getAlls(){
     if(this.old){
     this.product.AllProdacts(this.type,this.page,this.limit).subscribe(s=>{
-      this.ArrP=s, 
+      this.ArrP=s,   console.log(this.ArrP.length+"count"); 
+   
     console.log(this.ArrP)}
     ,e=>{console.log(e)})
     }
     else{
-    this.product.AllOldProdacts(this.type,this.page,this.limit).subscribe(s=>{this.ArrP=s, 
-      console.log(this.ArrP)}
+    this.product.AllOldProdacts(this.type,this.page,this.limit).subscribe(s=>{
+    this.ArrP=s.arr;
+      console.log(s,"s");
+      this.count=s.sum;
+      console.log(this.ArrP),console.log(this.ArrP.length+"count"); }
       ,e=>{console.log(e)})
     }
     this.old=!this.old;
+    //console.log(this.ArrP.length+"count");
    }
 
 

@@ -37,7 +37,7 @@ import { ClosetsComponent } from './closets/closets.component';
 // import { ClosetsComponent } from './closets/closets.component';
 //import {AlertModule} from 'ng2-bootstrap/ng2-bootstrap';
 // import { GoogleMapsModule } from '@angular/google-maps';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import {  HttpClientJsonpModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 
@@ -66,6 +66,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
   ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     GoogleMapsModule,
     HttpClientModule,

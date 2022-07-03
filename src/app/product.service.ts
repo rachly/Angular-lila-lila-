@@ -17,7 +17,7 @@ export class ProductService {
     //   return this.Http.get<Products[]>(`https://localhost:44381/api/Products/GetAllProducts?type=${type}`); 
     // }
     AllProdacts(type:number,page:number,limit:number){
-      return this.Http.get<Products[]>(`https://localhost:44381/api/Products/getAllRestaurants?type=${type}?page=${page}?limit=${limit}`); 
+      return this.Http.get<Products[]>(`https://localhost:44381/api/Products/getAllRestaurants?type=${type}&page=${page}&limit=${limit}`); 
     }
      DeleteProdact(prodactId:number){
       return this.Http.delete<Products>(`https://localhost:44381/api/Products?productId=${prodactId}`);   
@@ -27,7 +27,10 @@ export class ProductService {
 
      }
     AllOldProdacts(type:number,page:number,limit:number){
-      return this.Http.get<Products[]>(`https://localhost:44381/api/Products/GetAllPWhithNotActive?type=${type}&page=${page}&limit=${limit}`);
+      return this.Http.get<any>(`https://localhost:44381/api/Products/GetAllPWhithNotActive?type=${type}&page=${page}&limit=${limit}`);
+    }
+   count(){
+      return this.Http.get<number>(`https://localhost:44381/api/Products/GetSumOfAllProudect`);
     }
     AllPicture(){
       // <Byte[][]>

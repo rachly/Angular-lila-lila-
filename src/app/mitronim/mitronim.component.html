@@ -6,7 +6,12 @@
 
 
 <div class="gallery-lightbox-conatiner">
-  <div class="gallery" *ngFor="let obj of ArrP ; index as i">
+  <div class="gallery" *ngFor="let obj of ArrP |
+  paginate: { 
+  itemsPerPage: pageSize,
+  currentPage: page,
+  totalItems: count };
+ let i=index  ">
     <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
    <button *ngIf="userAdmin" (click)="deleteProdact(obj.Id)">מחיקה</button>
     <div class="gallery-img">
@@ -45,8 +50,14 @@
   <button *ngIf="userAdmin&&!old" (click)="getAlls()"> הצג הכל </button>
   <button *ngIf="userAdmin&&old" (click)="getAlls()"> הצג חדש </button>
   </div>
+  
+  <pagination-controls 
+      
+ 
+  (pageChange)="pageChangeEvent($event)">
+</pagination-controls>
 
-    
+ 
 <div>
   <button *ngIf="userAdmin" (click)="addNew()"> חדש </button>
   </div>
