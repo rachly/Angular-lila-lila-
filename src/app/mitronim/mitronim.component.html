@@ -8,10 +8,10 @@
 <div class="gallery-lightbox-conatiner">
   <div class="gallery" *ngFor="let obj of ArrP |
   paginate: { 
-  itemsPerPage: pageSize,
+  itemsPerPage: limit,
   currentPage: page,
   totalItems: count };
- let i=index  ">
+   let i=index  ">
     <button *ngIf="userAdmin" (click)="selectEdit(obj)"> עריכה</button>
    <button *ngIf="userAdmin" (click)="deleteProdact(obj.Id)">מחיקה</button>
     <div class="gallery-img">
@@ -52,8 +52,8 @@
   </div>
   
   <pagination-controls 
-      
- 
+  previousLabel=""
+  nextLabel=""
   (pageChange)="pageChangeEvent($event)">
 </pagination-controls>
 
